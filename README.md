@@ -22,8 +22,8 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin <GitHubのリポジトリURL>
-git push -u origin main
+ git remote add origin <GitHubのリポジトリURL>
+ git push -u origin main
 ```
 
 ## 使い方
@@ -51,10 +51,12 @@ git push -u origin main
 
 1. GitHub で新しいリポジトリを作成します。
 2. このプロジェクトをそのリポジトリへ push します。
-3. GitHub のリポジトリ設定で `Settings > Pages` を開きます。
-4. `Build and deployment` の `Source` を `GitHub Actions` にします。
-5. `main` ブランチへ push すると、`.github/workflows/deploy-pages.yml` が自動で公開します。
-6. 公開後、`https://<ユーザー名>.github.io/<リポジトリ名>/` でアクセスできます。
+3. `npm run build` で `dist` を生成します。
+4. `dist` の内容を `gh-pages` ブランチへ配置します。
+5. GitHub のリポジトリ設定で `Settings > Pages` を開きます。
+6. `Build and deployment` の `Source` を `Deploy from a branch` にします。
+7. `Branch` は `gh-pages`、フォルダは `/ (root)` を選んで保存します。
+8. 公開後、`https://<ユーザー名>.github.io/<リポジトリ名>/` でアクセスできます。
 
 補足:
 
